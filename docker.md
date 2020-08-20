@@ -126,7 +126,9 @@ docker-compose up
 
 ### 下断点，发请求调试
 
-[http://localhost:9898/api/info](http://localhost:9898/api/info)
+```sh
+curl http://localhost:9898/api/info
+```
 
 ![下断点，发请求调试](podinfo-api-version.png)
 
