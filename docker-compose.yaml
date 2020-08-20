@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  golang:
+    image: podinfo:dev
+    command: >
+      bash -c "ls -la
+      && dlv debug /workspace/cmd/podinfo --headless --log -l 0.0.0.0:2345 --api-version=2"
+    volumes:
+    - ./:/workspace
+    ports:
+      - 9898:9898
+      - 2345:2345
+    security_opt:
+      - "seccomp:unconfined"
